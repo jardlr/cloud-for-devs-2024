@@ -1,24 +1,35 @@
 import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import NewTaskForm from './components/NewTaskForm';
 
 function App() {
+
+  const todos = [
+    {"id": 1, "description": "sup g"},
+    {"id": 2, "description": "sup gg"},
+    {"id": 3, "description": "sup go"}
+  ]
+
+ //let firstName = "jose";
+ const [firstName, setFirstName] = useState("Jose");
+
+  const changeFirstName = event => {
+    //firstName = event.target.value;
+    setFirstName(event.target.value);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NewTaskForm></NewTaskForm>
+      <input onChange={changeFirstName} type="text" value={firstName} />
+      <h1>{firstName}</h1>
+      <ul>
+          {
+            todos.map(todo => <li>{todo.description}</li>)
+        
+          }
+      </ul>
+    </>
   );
 }
 
