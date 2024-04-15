@@ -7,8 +7,7 @@ function App() {
 
   const todos = [
     {"id": 1, "description": "sup g"},
-    {"id": 2, "description": "sup gg"},
-    {"id": 3, "description": "sup go"}
+    {"id": 2, "description": "sup gg"}
   ]
 
  //let firstName = "jose";
