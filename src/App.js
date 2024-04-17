@@ -9,6 +9,7 @@ function App() {
     {"id": 1, "description": "sup g"},
     {"id": 2, "description": "sup gg"}
   ]
+  
 
  //let firstName = "jose";
  const [firstName, setFirstName] = useState("Jose");
@@ -18,6 +19,7 @@ function App() {
     setFirstName(event.target.value);
   }
   return (
+    
     <>
       <NewTaskForm></NewTaskForm>
       <input onChange={changeFirstName} type="text" value={firstName} />
